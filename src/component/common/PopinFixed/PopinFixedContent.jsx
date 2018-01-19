@@ -6,21 +6,20 @@ import Thread from '../../Workspace/FileType/Thread.jsx'
 import Timeline from '../../Timeline.jsx'
 
 const PopinFixedContent = props => {
-  return props.children.length === 2
-    ? (
-      <div className={classnames('wsFileGeneric__contentpage', `${props.customClass}`)}>
-        {props.children[0]}
+  if (props.children.length === 2) return (
+    <div className={classnames('wsFileGeneric__contentpage', `${props.customClass}`)}>
+      {props.children[0]}
 
-        <div className={classnames('wsFileGeneric__wrapper', `${props.customClass}__wrapper`)}>
-          {props.children[1]}
-        </div>
+      <div className={classnames('wsFileGeneric__wrapper', `${props.customClass}__wrapper`)}>
+        {props.children[1]}
       </div>
-    )
-    : (
-      <div className={classnames('wsFileGeneric__contentpage', `${props.customClass}`)}>
-        { props.children }
-      </div>
-    )
+    </div>
+  )
+  else return (
+    <div className={classnames('wsFileGeneric__contentpage', `${props.customClass}`)}>
+      { props.children }
+    </div>
+  )
 }
 
 export default PopinFixedContent
